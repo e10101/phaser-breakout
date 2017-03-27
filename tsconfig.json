@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "amd",
+        "sourceMap": true,
+        "outFile": "output/breakout.js"
+    },
+    "filesGlob": [
+        "./src/**/*.ts"
+    ]
+}
