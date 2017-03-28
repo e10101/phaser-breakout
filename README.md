@@ -9,6 +9,7 @@ We are going old school and want to test your skills at creating a Breakout game
 1. The ball should rebound off the sides, top of the game board and off the paddle. 
 2. If the ball falls off the bottom of the board the game is over or a life is lost.
 3. The game should be re-playable without refreshing the page.
+4. Needs to be playable on a mobile browser, and scale to fit the screen size.
 
 ### What we're looking for ###
 * The process you used to complete this test
@@ -19,7 +20,6 @@ We are going old school and want to test your skills at creating a Breakout game
 
 ### Deliverables ###
 * Instructions on how to run your application
-* Needs to be playable on a mobile browser, and scale to fit the screen size
 * Code should be committed to a git repository hosted on [bitbucket.org](https://bitbucket.org)
 
 ### Extra Credit ###
