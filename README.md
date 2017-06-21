@@ -2,6 +2,8 @@
 
 ## Instructions ##
 
+Read the entire readme before doing anything else!
+
 ### Breakout ###
 We are going old school and want to test your skills at creating a Breakout game.  There are a number of breakout style games available on the internet for you to test out.
 
