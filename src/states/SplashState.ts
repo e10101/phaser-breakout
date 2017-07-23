@@ -5,8 +5,6 @@ export default class SplashState extends Phaser.State {
   loaderBg: Phaser.Sprite
   loaderBar: Phaser.Sprite
 
-  init () {}
-
   preload () {
     this.loaderBg = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'loaderBg');
     this.loaderBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'loaderBar');
@@ -20,7 +18,7 @@ export default class SplashState extends Phaser.State {
   }
 
   create () {
-    // this.game.state.start('Game');
-    console.log('SplashState create');
+    this.game.state.start('Game');
+    console.log('SplashState create3');
   }
 }
