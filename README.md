@@ -34,3 +34,5 @@
  - https://phaser.io/examples/v2/category/arcade-physics
 
 ### Webpack add custom css
+ - https://webpack.github.io/docs/stylesheets.html
+ - https://www.npmjs.com/package/html-webpack-plugin
