@@ -36,3 +36,17 @@
 ### Webpack add custom css
  - https://webpack.github.io/docs/stylesheets.html
  - https://www.npmjs.com/package/html-webpack-plugin
+
+### Touch / mouse input
+
+#### Learned: 
+ - `mousePointer`: The most recently active Pointer object. When you've limited max pointers to 1 this will accurately be either the first finger touched or mouse.
+ - `activePointer`: The mouse has its own unique Phaser.Pointer object which you can use if making a desktop specific game.
+ - `pointer1`: does not work when mouse click
+
+ - https://phaser.io/docs/2.4.3/Phaser.Pointer.html
+ - https://phaser.io/examples/v2/input/follow-mouse
+ - https://phaser.io/examples/v2/input/snap-on-drag
+ - https://phaser.io/examples/v2/input/drag-update-multiple
+ - https://phaser.io/examples/v2/input/drag-update
+ - https://phaser.io/examples/v2/input/drag-event-parameters
