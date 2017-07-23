@@ -1,5 +1,8 @@
 # Breakout Cerebralfix
 
+## TODO
+ - Add friction to paddle
+
 ## Learning
 ### API
  - https://phaser.io/docs/2.6.2/index
@@ -40,9 +43,11 @@
 ### Touch / mouse input
 
 #### Learned: 
- - `mousePointer`: The most recently active Pointer object. When you've limited max pointers to 1 this will accurately be either the first finger touched or mouse.
- - `activePointer`: The mouse has its own unique Phaser.Pointer object which you can use if making a desktop specific game.
- - `pointer1`: does not work when mouse click
+ `mousePointer`: The most recently active Pointer object. When you've limited max pointers to 1 this will accurately be either the first finger touched or mouse.
+
+`activePointer`: The mouse has its own unique Phaser.Pointer object which you can use if making a desktop specific game.
+
+`pointer1`: does not work when mouse click.
 
  - https://phaser.io/docs/2.4.3/Phaser.Pointer.html
  - https://phaser.io/examples/v2/input/follow-mouse
@@ -50,6 +55,7 @@
  - https://phaser.io/examples/v2/input/drag-update-multiple
  - https://phaser.io/examples/v2/input/drag-update
  - https://phaser.io/examples/v2/input/drag-event-parameters
+ - https://stackoverflow.com/questions/28104605/how-to-find-the-mouse-position-x-y-using-phaser
 
 ### Typescript export class / static class
  - https://github.com/Microsoft/TypeScript/issues/10058
@@ -65,3 +71,18 @@
  
 ### Drag
  - http://www.html5gamedevs.com/topic/24887-sprite-moving-using-input-coordinates/
+
+### Friction
+ - https://phaser.io/examples/v2/box2d/varying-friction
+ - https://phaser.io/docs/2.6.2/Phaser.Physics.Arcade.Body.html#friction
+ - http://www.html5gamedevs.com/topic/28840-arcade-physics-friction/
+ - http://phaser.io/docs/2.6.2/Phaser.Physics.Arcade.Body.html
+
+### BOX2D
+
+Need buy, pass.
+
+ - http://www.html5gamedevs.com/topic/25279-uncaught-typeerror-cphysicsbox2d-is-not-a-constructor/
+
+### By usning collide callback function simulate friction
+ - http://phaser.io/docs/2.6.2/Phaser.Physics.Arcade.html#collide

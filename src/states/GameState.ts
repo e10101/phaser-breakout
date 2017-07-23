@@ -34,7 +34,7 @@ export default class GameState extends Phaser.State {
     }
 
     update() {
-        this.physics.arcade.collide(this.ball, this.paddle);
+        this.physics.arcade.collide(this.ball, this.paddle, this.ballAndPaddleCollided);
 
         if (this.input.activePointer.isDown) {
             console.log('activePointer is down');
@@ -69,7 +69,7 @@ export default class GameState extends Phaser.State {
 
         // Physics settings
         this.physics.enable(this.ball, Phaser.Physics.ARCADE);
-        this.ball.body.velocity.set(150, -150);
+        this.ball.body.velocity.set(0, 150);
         this.ball.body.collideWorldBounds = true;
         this.ball.body.bounce.set(1);
         this.ball.checkWorldBounds = true;
@@ -89,6 +89,10 @@ export default class GameState extends Phaser.State {
         this.paddle.body.immovable = true;
 
         centerGameObjects([this.paddle]);
+    }
+
+    ballAndPaddleCollided(ball, paddle) {
+        // ball.body.drag = new Phaser.Point(1000, 0);
     }
 
     gameOver() {
