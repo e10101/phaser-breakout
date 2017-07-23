@@ -50,3 +50,18 @@
  - https://phaser.io/examples/v2/input/drag-update-multiple
  - https://phaser.io/examples/v2/input/drag-update
  - https://phaser.io/examples/v2/input/drag-event-parameters
+
+### Typescript export class / static class
+ - https://github.com/Microsoft/TypeScript/issues/10058
+ - https://stackoverflow.com/questions/13212521/typescript-static-classes
+
+### Move to
+ - https://phaser.io/examples/v2/arcade-physics/move-towards-object
+ - https://phaser.io/examples/v2/arcade-physics/move-over-distance
+ - https://phaser.io/docs/2.4.3/Phaser.Physics.Arcade.Body.html#velocity
+
+### update delta
+ - https://phaser.io/docs/2.6.2/Phaser.Time.html
+ 
+### Drag
+ - http://www.html5gamedevs.com/topic/24887-sprite-moving-using-input-coordinates/
