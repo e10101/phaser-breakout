@@ -1,8 +1,10 @@
 # Breakout Cerebralfix
 
 ## TODO
- - Add friction to paddle
- - Add bricks
+ - [x] Add friction to paddle
+ - [x] Add bricks
+ - [ ] Add brick kill function
+ - [ ] Add bricks auto fit size function
 
 ## Learning
 ### API

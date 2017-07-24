@@ -41,7 +41,7 @@ export default class GameState extends Phaser.State {
 
   update() {
     this.physics.arcade.collide(this.ball, this.paddle, this.ballAndPaddleCollided);
-
+    this.physics.arcade.collide(this.ball, this.bricks, this.killBrick);
     if (this.input.activePointer.isDown) {
       console.log('activePointer is down');
       const ptr = this.input.activePointer;
@@ -120,6 +120,10 @@ export default class GameState extends Phaser.State {
 
   ballAndPaddleCollided(ball, paddle) {
     // ball.body.drag = new Phaser.Point(1000, 0);
+  }
+
+  killBrick(ball, brick) {
+    brick.kill();
   }
 
   gameOver() {
