@@ -1,7 +1,7 @@
 
 export const brickInfo = {
-  width: 50,
-  height: 50,
+  width: 80,
+  height: 60,
   color: "#4885ed",
   count: {
     row: 7,

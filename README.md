@@ -12,6 +12,7 @@
  - [ ] Add sound effect
  - [x] Implement splash state
  - [ ] Mobile friendly
+ - [ ] Add animation
 
 ## Learning
 ### API
@@ -157,3 +158,10 @@ Use the pivot of group, not the anchor. becouse anchor is used for sprite.
 ### Collide callback
  - http://www.html5gamedevs.com/topic/8629-passing-arguments-to-collide-callback-function/
  - http://www.html5gamedevs.com/topic/4663-collision-callback/
+
+### Mobile friendly
+ - http://www.emanueleferonato.com/2015/02/26/the-basics-of-responsive-html5-games/
+ - https://hacks.mozilla.org/2015/12/from-game-jam-to-mobile-and-firefox-os/
+
+### Tween
+ -

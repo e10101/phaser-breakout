@@ -1,5 +1,5 @@
 import * as Phaser from 'phaser';
-import {centerGameObjects} from '../utils/utils.ts';
+import { centerGameObjects } from '../utils/utils.ts';
 import { splashUI } from '../config.ts';
 
 export default class SplashState extends Phaser.State {
@@ -25,6 +25,10 @@ export default class SplashState extends Phaser.State {
 
     const title = this.add.text(0, 0, splashUI.title, splashUI.titleStyle);
     title.setTextBounds(0, this.world.height - 100, this.world.width, 50);
+    title.alpha = 0;
+
+    this.game.add.tween(title).to({ alpha: 1 }, 1000, Phaser.Easing.Linear.None, true, 0, 5000, true);
+
 
     const subTitle = this.add.text(0, 0, splashUI.subTitle, splashUI.subTitleStyle);
     subTitle.setTextBounds(0, this.world.height - 50, this.world.width, 50);
@@ -35,7 +39,7 @@ export default class SplashState extends Phaser.State {
     });
   }
 
-  playGame () {
+  playGame() {
     this.game.state.start('Game');
   }
 }
