@@ -133,7 +133,7 @@ export default class GameState extends Phaser.State {
   }
 
   gameOver() {
-    this.showMenu();
+    this.game.state.start('Over');
   }
 
   showMenu() {

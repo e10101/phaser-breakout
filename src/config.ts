@@ -12,3 +12,10 @@ export const brickInfo = {
   },
   padding: 10
 };
+
+export const gameOverTextStyle = {
+  font: "32px Arial",
+  fill: "#ff0044",
+  boundsAlignH: "center",
+  boundsAlignV: "middle"
+}

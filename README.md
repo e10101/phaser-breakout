@@ -6,7 +6,7 @@
  - [x] Add brick kill function
  - [ ] Add bricks auto fit size function
  - [ ] Add out box check
- - [ ] Add GameOver state
+ - [x] Add GameOver state
 
 ## Learning
 ### API
@@ -125,3 +125,10 @@ Need buy, pass.
 Use the pivot of group, not the anchor. becouse anchor is used for sprite.
 
  - http://www.html5gamedevs.com/topic/4277-group-anchorpivot/
+
+### Out of bounds check
+ - https://phaser.io/examples/v2/sprites/out-of-bounds
+
+### Add text
+ - https://phaser.io/examples/v2/category/text
+ - https://phaser.io/examples/v2/text/center-text
