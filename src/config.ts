@@ -14,8 +14,17 @@ export const brickInfo = {
 };
 
 export const gameOverTextStyle = {
-  font: "32px Arial",
-  fill: "#ff0044",
+  font: "32px VT323",
+  fill: "white",
   boundsAlignH: "center",
   boundsAlignV: "middle"
+}
+
+
+export const gameOverNoteStyle = {
+  font: "24px VT323",
+  fill: "white",
+  boundsAlignH: "center",
+  boundsAlignV: "middle",
+  textAlign: "center";
 }
