@@ -4,13 +4,14 @@
  - [x] Add friction to paddle
  - [x] Add bricks
  - [x] Add brick kill function
- - [ ] Add bricks auto fit size function
+ - [ ] Add bricks auto scale function
  - [x] Add out box check
  - [x] Add GameOver state
  - [x] Refactor the image to code based sprite
  - [x] Check win
  - [ ] Add sound effect
  - [x] Implement splash state
+ - [ ] Mobile friendly
 
 ## Learning
 ### API
