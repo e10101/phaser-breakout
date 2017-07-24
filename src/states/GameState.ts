@@ -2,7 +2,8 @@ import * as Phaser from 'phaser';
 import { centerGameObjects } from '../utils/utils.ts';
 // import { Position } from '../utils/objects.ts';
 import BrickSprite from '../sprites/BrickSprite.ts';
-import { brickInfo } from '../config.ts';
+import BallSprite from '../sprites/BallSprite.ts';
+import { brickInfo, ballInfo } from '../config.ts';
 
 export default class GameState extends Phaser.State {
   ball: Phaser.Sprite;
@@ -71,11 +72,24 @@ export default class GameState extends Phaser.State {
 
   createBall() {
     // Create the ball
-    this.ball = this.add.sprite(this.world.width * 0.5, this.world.height * 0.8, 'ball');
+    // const circle = new BallSprite(this.game, 100, 100);
+    // this.ball = new BallSprite(this.game, this.world.width * 0.5, this.world.height * 0.5);
+    // this.ball = this.add.sprite(this.world.width * 0.5, this.world.height * 0.8, 'ball');
+
+    // Create BitmapData
+    const bmd = this.game.add.bitmapData(20, 20);
+    // Draw circle
+    bmd.ctx.fillStyle = ballInfo.color;
+    bmd.ctx.beginPath();
+    bmd.ctx.arc(ballInfo.width / 2, ballInfo.height / 2, ballInfo.radius, 0, Math.PI * 2, true);
+    bmd.ctx.closePath();
+    bmd.ctx.fill();
+    // Put BitmapData in a Sprite
+    this.ball = this.game.add.sprite(this.world.width * 0.5, this.world.height * 0.8, bmd);
 
     // Physics settings
     this.physics.enable(this.ball, Phaser.Physics.ARCADE);
-    this.ball.body.velocity.set(-150, 150);
+    this.ball.body.velocity.set(-150, -150);
     this.ball.body.collideWorldBounds = true;
     this.ball.body.bounce.set(1);
     this.ball.checkWorldBounds = true;
@@ -108,7 +122,8 @@ export default class GameState extends Phaser.State {
         brickX = (r * (bi.width + bi.padding)) + bi.offset.left;
         brickY = (c * (bi.height + bi.padding)) + bi.offset.top;
 
-        const brick = this.add.sprite(brickX, brickY, 'brick');
+        const brick = new BrickSprite(this.game, brickX, brickY);
+        // const brick = this.add.sprite(brickX, brickY, 'brick');
         this.physics.enable(brick, Phaser.Physics.ARCADE);
         brick.body.immovable = true;
         // centerGameObjects([brick]);

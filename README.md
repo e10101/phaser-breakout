@@ -5,8 +5,9 @@
  - [x] Add bricks
  - [x] Add brick kill function
  - [ ] Add bricks auto fit size function
- - [ ] Add out box check
+ - [x] Add out box check
  - [x] Add GameOver state
+ - [ ] Refactor the image to code based sprite
 
 ## Learning
 ### API
@@ -94,9 +95,8 @@ Need buy, pass.
  - https://phaser.io/examples/v2/arcade-physics/bounce-accelerator
 
 ### Add Bricks
-  - http://www.html5gamedevs.com/topic/21685-extending-sprite-error-typescript/
-  - http://www.html5gamedevs.com/topic/14496-inheritance-in-typescript/
-  -
+ - http://www.html5gamedevs.com/topic/21685-extending-sprite-error-typescript/
+ - http://www.html5gamedevs.com/topic/14496-inheritance-in-typescript/
 
 ### Typescript export config
  - https://stackoverflow.com/questions/41762570/how-to-export-object-in-typescript
@@ -132,3 +132,14 @@ Use the pivot of group, not the anchor. becouse anchor is used for sprite.
 ### Add text
  - https://phaser.io/examples/v2/category/text
  - https://phaser.io/examples/v2/text/center-text
+ - https://phaser.io/examples/v2/text/center-text-on-sprite
+
+### Game over
+ - http://www.html5gamedevs.com/topic/26379-game-over-screen-destroy-complete-state/
+ - http://www.html5gamedevs.com/topic/3893-how-to-restart-a-game/
+
+### Draw box / circle sprite
+ - http://www.html5gamedevs.com/topic/7620-draw-solid-rectangle/
+ - http://www.html5gamedevs.com/topic/13555-drawing-a-circle-with-bitmapdata/
+ - http://examples.phaser.io/_site/view_full.html?d=display&f=graphics.js&t=graphics
+ - https://stackoverflow.com/questions/29382710/drawing-a-circle-with-bitmapdata

@@ -1,7 +1,8 @@
 
 export const brickInfo = {
   width: 50,
-  height: 20,
+  height: 50,
+  color: "#4885ed",
   count: {
     row: 7,
     col: 3
@@ -13,11 +14,18 @@ export const brickInfo = {
   padding: 10
 };
 
+export const ballInfo = {
+  width: 20,
+  height: 20,
+  radius: 10,
+  color: "#db3236",
+}
+
 export const gameOverTextStyle = {
   font: "32px VT323",
   fill: "white",
   boundsAlignH: "center",
-  boundsAlignV: "middle"
+  boundsAlignV: "middle",
 }
 
 
@@ -26,5 +34,5 @@ export const gameOverNoteStyle = {
   fill: "white",
   boundsAlignH: "center",
   boundsAlignV: "middle",
-  textAlign: "center";
+  textAlign: "center",
 }
