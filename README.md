@@ -10,6 +10,7 @@
  - [x] Refactor the image to code based sprite
  - [x] Check win
  - [ ] Add sound effect
+ - [x] Implement splash state
 
 ## Learning
 ### API

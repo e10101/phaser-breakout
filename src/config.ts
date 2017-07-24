@@ -46,8 +46,16 @@ export const gameOverUI = {
 
 export const gameWinUI = {
   backColorHex: 0x3cba54,
-  title: "YOU LOSE",
+  title: "YOU WIN!",
   titleStyle: getFontStyle(32),
   subTitle: "Click to restart",
+  subTitleStyle: getFontStyle(24),
+}
+
+export const splashUI = {
+  backColorHex: 0x000000,
+  title: "CLICK TO PLAY",
+  titleStyle: getFontStyle(32),
+  subTitle: "Created by Yishi Guo",
   subTitleStyle: getFontStyle(24),
 }
