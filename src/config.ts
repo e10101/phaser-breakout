@@ -24,7 +24,7 @@ export const ballInfo = {
 export const paddleInfo = {
   width: 200,
   height: 15,
-  color: "#db3236",
+  color: "#3cba54",
 }
 
 export const gameOverTextStyle = {

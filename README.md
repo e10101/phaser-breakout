@@ -7,7 +7,8 @@
  - [ ] Add bricks auto fit size function
  - [x] Add out box check
  - [x] Add GameOver state
- - [ ] Refactor the image to code based sprite
+ - [x] Refactor the image to code based sprite
+ - [ ] Check win
 
 ## Learning
 ### API
@@ -143,3 +144,6 @@ Use the pivot of group, not the anchor. becouse anchor is used for sprite.
  - http://www.html5gamedevs.com/topic/13555-drawing-a-circle-with-bitmapdata/
  - http://examples.phaser.io/_site/view_full.html?d=display&f=graphics.js&t=graphics
  - https://stackoverflow.com/questions/29382710/drawing-a-circle-with-bitmapdata
+
+### Google colors
+ - https://designpieces.com/palette/google-new-logo-2015-color-palette-hex-and-rgb/
