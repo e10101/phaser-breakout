@@ -1,6 +1,7 @@
-var path = require('path')
-var webpack = require('webpack')
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+var path = require('path');
+var webpack = require('webpack');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var definePlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
 })
@@ -30,13 +31,18 @@ module.exports = {
       }
     }),
 
+    new HtmlWebpackPlugin({
+      title: 'Breakout',
+      template: 'index.template.ejs'
+    })
+
   ],
   module: {
     loaders: [
       {
-            test: /\.ts$/,
-            exclude: /node_modules/,
-            loader: 'ts-loader'
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        loader: 'ts-loader'
       }
     ]
   },

@@ -23,7 +23,7 @@ export default class GameState extends Phaser.State {
 
     this.physics.startSystem(Phaser.Physics.ARCADE);
 
-    // this.physics.arcade.checkCollision.down = false;
+    this.physics.arcade.checkCollision.down = false;
 
     // Create the ball
     this.createBall();
@@ -36,7 +36,7 @@ export default class GameState extends Phaser.State {
   }
 
   render() {
-
+    // this.displayDebugInfo();
   }
 
   update() {
@@ -80,7 +80,7 @@ export default class GameState extends Phaser.State {
     this.ball.body.bounce.set(1);
     this.ball.checkWorldBounds = true;
 
-    centerGameObjects([this.ball]);
+    // centerGameObjects([this.ball]);
 
     // Add outbound event
     this.ball.events.onOutOfBounds.add(this.gameOver, this);
@@ -101,7 +101,7 @@ export default class GameState extends Phaser.State {
     this.bricks = this.add.group();
     const bi = brickInfo;
 
-    let brickX: number, brickY:number;
+    let brickX: number, brickY: number;
 
     for (let c = 0; c < bi.count.col; c++) {
       for (let r = 0; r < bi.count.row; r++) {
@@ -111,11 +111,17 @@ export default class GameState extends Phaser.State {
         const brick = this.add.sprite(brickX, brickY, 'brick');
         this.physics.enable(brick, Phaser.Physics.ARCADE);
         brick.body.immovable = true;
-        centerGameObjects([brick]);
+        // centerGameObjects([brick]);
 
         this.bricks.add(brick);
       }
     }
+
+    // Center the group
+    // centerGameObjects([this.bricks]);
+    this.bricks.x = this.world.centerX;
+    this.bricks.y = 100;
+    this.bricks.pivot = new Phaser.Point(this.bricks.width / 2, this.bricks.height / 2);
   }
 
   ballAndPaddleCollided(ball, paddle) {
@@ -133,4 +139,20 @@ export default class GameState extends Phaser.State {
   showMenu() {
 
   }
+
+  displayDebugInfo() {
+    this.game.debug.start(32, 32);
+    this.game.debug.line(`Bricks:`);
+    this.game.debug.line(`X: ${this.bricks.x}, Y: ${this.bricks.y}`);
+    this.game.debug.line(`Width: ${this.bricks.width}, Height: ${this.bricks.height}`);
+
+    this.game.debug.body(this.ball);
+
+    this.bricks.children.map((brick: Phaser.Sprite) => {
+      this.game.debug.body(brick);
+    })
+    this.game.debug.pixel(this.bricks.x, this.bricks.y, 'red', 4);
+
+  }
+
 }

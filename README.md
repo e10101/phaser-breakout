@@ -3,8 +3,10 @@
 ## TODO
  - [x] Add friction to paddle
  - [x] Add bricks
- - [ ] Add brick kill function
+ - [x] Add brick kill function
  - [ ] Add bricks auto fit size function
+ - [ ] Add out box check
+ - [ ] Add GameOver state
 
 ## Learning
 ### API
@@ -98,3 +100,28 @@ Need buy, pass.
 
 ### Typescript export config
  - https://stackoverflow.com/questions/41762570/how-to-export-object-in-typescript
+
+### Destroy sprite
+ - https://phaser.io/examples/v2/sprites/destroy
+ - http://www.html5gamedevs.com/topic/4774-destroy-a-sprite/
+
+### Group scale
+ - https://phaser.io/docs/2.6.2/Phaser.Group.html
+ - https://phaser.io/examples/v2/groups/group-scale
+ - https://www.joshmorony.com/how-to-scale-a-game-for-all-device-sizes-in-phaser/
+ - http://www.html5gamedevs.com/topic/5949-solution-scaling-for-multiple-devicesresolution-and-screens/
+
+### Centering canvas
+ - http://www.html5gamedevs.com/topic/1609-centering-canvas/
+
+### Debug game
+ - https://phaser.io/examples/v2/arcade-physics/offset-bounding-box
+ - http://www.html5gamedevs.com/topic/8022-gamedebugbody-issues/
+ - http://phaser.io/docs/2.4.4/Phaser.Utils.Debug.html
+ - https://gamedevacademy.org/how-to-debug-phaser-games/
+
+### Group position
+
+Use the pivot of group, not the anchor. becouse anchor is used for sprite.
+
+ - http://www.html5gamedevs.com/topic/4277-group-anchorpivot/

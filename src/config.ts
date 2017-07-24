@@ -7,8 +7,8 @@ export const brickInfo = {
     col: 3
   },
   offset: {
-    top: 50,
-    left: 60
+    top: 0,
+    left: 0
   },
   padding: 10
 };
