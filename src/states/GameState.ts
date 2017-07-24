@@ -3,11 +3,12 @@ import { centerGameObjects } from '../utils/utils.ts';
 // import { Position } from '../utils/objects.ts';
 import BrickSprite from '../sprites/BrickSprite.ts';
 import BallSprite from '../sprites/BallSprite.ts';
-import { brickInfo, ballInfo } from '../config.ts';
+import PaddleSprite from '../sprites/PaddleSprite.ts';
+import { brickInfo, ballInfo, paddleInfo } from '../config.ts';
 
 export default class GameState extends Phaser.State {
   ball: Phaser.Sprite;
-  paddle: Phaser.Sprite;
+  paddle: PaddleSprite;
   bricks: Phaser.Group;
 
   prevPointerPos: Array<number> = [];
@@ -37,7 +38,7 @@ export default class GameState extends Phaser.State {
   }
 
   render() {
-    // this.displayDebugInfo();
+    this.displayDebugInfo();
   }
 
   update() {
@@ -77,7 +78,7 @@ export default class GameState extends Phaser.State {
     // this.ball = this.add.sprite(this.world.width * 0.5, this.world.height * 0.8, 'ball');
 
     // Create BitmapData
-    const bmd = this.game.add.bitmapData(20, 20);
+    const bmd = this.game.add.bitmapData(ballInfo.width, ballInfo.height);
     // Draw circle
     bmd.ctx.fillStyle = ballInfo.color;
     bmd.ctx.beginPath();
@@ -101,7 +102,16 @@ export default class GameState extends Phaser.State {
   }
 
   createPaddle() {
-    this.paddle = this.add.sprite(this.world.width * 0.5, this.world.height * 0.9, 'paddle');
+    // this.paddle = this.add.sprite(this.world.width * 0.5, this.world.height * 0.9, 'paddle');
+    // this.paddle = new PaddleSprite(this.game, this.world.width * 0.5, this.world.height * 0.9);
+
+    const bmd = this.game.add.bitmapData(paddleInfo.width, paddleInfo.height);
+    bmd.ctx.beginPath();
+    bmd.ctx.rect(0, 0, paddleInfo.width, paddleInfo.height);
+    bmd.ctx.fillStyle = paddleInfo.color;
+    bmd.ctx.fill();
+
+    this.paddle = this.game.add.sprite(this.world.width * 0.5, this.world.height * 0.9, bmd);
 
     // Physics settings
     this.physics.enable(this.paddle, Phaser.Physics.ARCADE);
@@ -168,6 +178,10 @@ export default class GameState extends Phaser.State {
     })
     this.game.debug.pixel(this.bricks.x, this.bricks.y, 'red', 4);
 
+    this.game.debug.line(`Paddle:`);
+    this.game.debug.line(`X: ${this.paddle.x}, Y: ${this.paddle.y}`);
+    this.game.debug.line(`Width: ${this.paddle.width}, Height: ${this.paddle.height}`);
+    this.game.debug.pixel(this.paddle.x, this.paddle.y, 'black', 4);
   }
 
 }

@@ -2,7 +2,8 @@ import * as Phaser from 'phaser';
 import { centerGameObjects } from '../utils/utils.ts';
 import { ballInfo } from '../config.ts';
 
-// DO NOT WORK NOW
+// DOES NOT WORK NOW
+
 export default class BallSprite extends Phaser.Sprite {
   constructor(game: Phaser.Game, x: number, y: number) {
     console.log('BallSprite', x, y);
