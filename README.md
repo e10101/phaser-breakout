@@ -13,9 +13,11 @@
  - [x] Implement splash state
  - [ ] Mobile friendly
  - [ ] Add animation
+ - [ ] Faster on mobile or large screen.
 
-## Learning
-### API
+## RESEARCH HISTORY
+
+### Doc
  - https://phaser.io/docs/2.6.2/index
 
 ### How Phase work and get start
@@ -89,7 +91,7 @@
  - http://www.html5gamedevs.com/topic/28840-arcade-physics-friction/
  - http://phaser.io/docs/2.6.2/Phaser.Physics.Arcade.Body.html
 
-### BOX2D
+### Box2D
 
 Need buy, pass.
 
@@ -164,4 +166,5 @@ Use the pivot of group, not the anchor. becouse anchor is used for sprite.
  - https://hacks.mozilla.org/2015/12/from-game-jam-to-mobile-and-firefox-os/
 
 ### Tween
- -
+ - https://phaser.io/examples/v2/tweens/fading-in-a-sprite
+ - http://phaser.io/docs/2.4.4/Phaser.Tween.html
