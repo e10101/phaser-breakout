@@ -4,6 +4,7 @@ import BootState from './states/BootState.ts';
 import SplashState from './states/SplashState.ts';
 import GameState from './states/GameState.ts';
 import OverState from './states/OverState.ts';
+import WinState from './states/WinState.ts';
 
 export class Breakout extends Phaser.Game {
   constructor () {
@@ -16,6 +17,7 @@ export class Breakout extends Phaser.Game {
     this.state.add('Splash', SplashState, false);
     this.state.add('Game', GameState, false);
     this.state.add('Over', OverState, false);
+    this.state.add('Win', WinState, false);
 
     this.state.start('Boot')
   }

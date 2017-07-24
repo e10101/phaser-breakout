@@ -27,18 +27,27 @@ export const paddleInfo = {
   color: "#3cba54",
 }
 
-export const gameOverTextStyle = {
-  font: "32px VT323",
-  fill: "white",
-  boundsAlignH: "center",
-  boundsAlignV: "middle",
+const getFontStyle = (fontSize) => {
+  return {
+    font: `${fontSize}px VT323`,
+    fill: "white",
+    boundsAlignH: "center",
+    boundsAlignV: "middle",
+  }
 }
 
+export const gameOverUI = {
+  backColorHex: 0x4885ed,
+  title: "YOU LOSE",
+  titleStyle: getFontStyle(32),
+  subTitle: "Click to restart",
+  subTitleStyle: getFontStyle(24),
+}
 
-export const gameOverNoteStyle = {
-  font: "24px VT323",
-  fill: "white",
-  boundsAlignH: "center",
-  boundsAlignV: "middle",
-  textAlign: "center",
+export const gameWinUI = {
+  backColorHex: 0x3cba54,
+  title: "YOU LOSE",
+  titleStyle: getFontStyle(32),
+  subTitle: "Click to restart",
+  subTitleStyle: getFontStyle(24),
 }

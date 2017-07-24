@@ -8,7 +8,8 @@
  - [x] Add out box check
  - [x] Add GameOver state
  - [x] Refactor the image to code based sprite
- - [ ] Check win
+ - [x] Check win
+ - [ ] Add sound effect
 
 ## Learning
 ### API
@@ -147,3 +148,10 @@ Use the pivot of group, not the anchor. becouse anchor is used for sprite.
 
 ### Google colors
  - https://designpieces.com/palette/google-new-logo-2015-color-palette-hex-and-rgb/
+
+### Group all killed count
+ - https://stackoverflow.com/questions/36439565/killing-all-elements-in-a-groupphaser
+
+### Collide callback
+ - http://www.html5gamedevs.com/topic/8629-passing-arguments-to-collide-callback-function/
+ - http://www.html5gamedevs.com/topic/4663-collision-callback/

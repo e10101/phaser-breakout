@@ -13,6 +13,8 @@ export default class GameState extends Phaser.State {
 
   prevPointerPos: Array<number> = [];
 
+  debugMode: boolean = false;
+
   preload() {
     console.log('GameState repload');
     this.load.image('ball', 'assets/images/ball.png');
@@ -38,12 +40,15 @@ export default class GameState extends Phaser.State {
   }
 
   render() {
-    // this.displayDebugInfo();
+    if (this.debugMode) {
+      this.displayDebugInfo();
+    }
   }
 
   update() {
     this.physics.arcade.collide(this.ball, this.paddle, this.ballAndPaddleCollided);
-    this.physics.arcade.collide(this.ball, this.bricks, this.killBrick);
+    this.physics.arcade.collide(this.ball, this.bricks, this.killBrick, null, this);
+
     if (this.input.activePointer.isDown) {
       console.log('activePointer is down');
       const ptr = this.input.activePointer;
@@ -149,20 +154,27 @@ export default class GameState extends Phaser.State {
     this.bricks.pivot = new Phaser.Point(this.bricks.width / 2, this.bricks.height / 2);
   }
 
+  // Simulate friction
   ballAndPaddleCollided(ball, paddle) {
     // ball.body.drag = new Phaser.Point(1000, 0);
+    // TODO friction
   }
 
   killBrick(ball, brick) {
     brick.kill();
+
+    this.checkWin();
   }
 
   gameOver() {
     this.game.state.start('Over');
   }
 
-  showMenu() {
-
+  checkWin() {
+    const livingCount = this.bricks.countLiving();
+    if (livingCount <= this.bricks.children.length - 3) {
+      this.game.state.start("Win");
+    }
   }
 
   displayDebugInfo() {
@@ -183,5 +195,4 @@ export default class GameState extends Phaser.State {
     this.game.debug.line(`Width: ${this.paddle.width}, Height: ${this.paddle.height}`);
     this.game.debug.pixel(this.paddle.x, this.paddle.y, 'black', 4);
   }
-
 }

@@ -17,8 +17,7 @@ export default class SplashState extends Phaser.State {
     this.load.image('mushroom', 'assets/images/mushroom2.png');
   }
 
-  create () {
+  playGame () {
     this.game.state.start('Game');
-    console.log('SplashState create3');
   }
 }
