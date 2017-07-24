@@ -2,6 +2,7 @@
 
 ## TODO
  - Add friction to paddle
+ - Add bricks
 
 ## Learning
 ### API
@@ -42,7 +43,7 @@
 
 ### Touch / mouse input
 
-#### Learned: 
+#### Learned:
  `mousePointer`: The most recently active Pointer object. When you've limited max pointers to 1 this will accurately be either the first finger touched or mouse.
 
 `activePointer`: The mouse has its own unique Phaser.Pointer object which you can use if making a desktop specific game.
@@ -68,7 +69,7 @@
 
 ### update delta
  - https://phaser.io/docs/2.6.2/Phaser.Time.html
- 
+
 ### Drag
  - http://www.html5gamedevs.com/topic/24887-sprite-moving-using-input-coordinates/
 
@@ -86,3 +87,12 @@ Need buy, pass.
 
 ### By usning collide callback function simulate friction
  - http://phaser.io/docs/2.6.2/Phaser.Physics.Arcade.html#collide
+ - https://phaser.io/examples/v2/arcade-physics/bounce-accelerator
+
+### Add Bricks
+  - http://www.html5gamedevs.com/topic/21685-extending-sprite-error-typescript/
+  - http://www.html5gamedevs.com/topic/14496-inheritance-in-typescript/
+  -
+
+### Typescript export config
+ - https://stackoverflow.com/questions/41762570/how-to-export-object-in-typescript

@@ -1,13 +1,9 @@
 
 export const Position = class {
-  public x: number;
-  public y: number;
-  constructor(x: number, y: number) {
-    this.x = x;
-    this.y = y;
-  }
+  static x: number;
+  static y: number;
 
-  seXY (x: number, y: number) {
+  static seXY (x: number, y: number) {
     this.x = x;
     this.y = y;
   }
