@@ -33,7 +33,7 @@ npm start
  - [x] Add GameOver state
  - [x] Refactor the image to code based sprite
  - [x] Check win
- - [ ] Add sound effect
+ - [x] Add sound effect
  - [x] Implement splash state
  - [ ] Mobile friendly
  - [ ] Add animation
@@ -195,3 +195,10 @@ Use the pivot of group, not the anchor. becouse anchor is used for sprite.
 
 ### Audio
  - https://phaser.io/examples/v2/audio/audio-sprite
+ - https://github.com/photonstorm/phaser-examples/search?utf8=%E2%9C%93&q=fx_mixdown.ogg&type=
+ - https://github.com/photonstorm/phaser-examples/blob/master/examples/assets/audio/SoundEffects/fx_mixdown.ogg
+
+### World bound touch callback
+ - https://phaser.io/examples/v2/arcade-physics/world-bounds-event
+ - http://www.html5gamedevs.com/topic/24091-collide-with-leftright-world-bound-only/
+ - https://phaser.io/examples/v2/sprites/collide-world-bounds
