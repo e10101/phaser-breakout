@@ -95,7 +95,7 @@ export default class GameState extends Phaser.State {
 
     // Physics settings
     this.physics.enable(this.ball, Phaser.Physics.ARCADE);
-    this.ball.body.velocity.set(-150, -150);
+    this.ball.body.velocity.set(ballInfo.initSpeed.x, ballInfo.initSpeed.y);
     this.ball.body.collideWorldBounds = true;
     this.ball.body.bounce.set(1);
     this.ball.checkWorldBounds = true;

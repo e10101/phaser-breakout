@@ -19,6 +19,10 @@ export const ballInfo = {
   height: 20,
   radius: 10,
   color: "#db3236",
+  initSpeed: {
+    x: -500,
+    y: 500
+  }
 }
 
 export const paddleInfo = {
