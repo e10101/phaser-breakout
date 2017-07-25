@@ -109,7 +109,7 @@ export default class GameState extends Phaser.State {
     bmd.ctx.closePath();
     bmd.ctx.fill();
     // Put BitmapData in a Sprite
-    this.ball = this.game.add.sprite(this.world.width * 0.5, this.world.height * 0.8, bmd);
+    this.ball = this.game.add.sprite(this.world.width * 0.5, this.world.height * 0.6, bmd);
 
     // Physics settings
     this.physics.enable(this.ball, Phaser.Physics.ARCADE);
@@ -199,13 +199,16 @@ export default class GameState extends Phaser.State {
 
   gameOver() {
     this.game.state.start('Over');
-    this.fx.play('gameOver');
+
+    // Need another effect.
+    // this.fx.play('gameOver');
   }
 
   checkWin() {
     const livingCount = this.bricks.countLiving();
-    if (livingCount <= this.bricks.children.length - 3) {
-      this.fx.play('win');
+    if (livingCount <= this.bricks.children.length - 5) {
+      // Need another effect.
+      // this.fx.play('win');
       this.game.state.start("Win");
     }
   }

@@ -20,8 +20,8 @@ export const ballInfo = {
   radius: 10,
   color: "#db3236",
   initSpeed: {
-    x: -500,
-    y: 500
+    x: 500,
+    y: -500
   }
 }
 
