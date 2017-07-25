@@ -192,3 +192,6 @@ Use the pivot of group, not the anchor. becouse anchor is used for sprite.
 ### Tween
  - https://phaser.io/examples/v2/tweens/fading-in-a-sprite
  - http://phaser.io/docs/2.4.4/Phaser.Tween.html
+
+### Audio
+ - https://phaser.io/examples/v2/audio/audio-sprite

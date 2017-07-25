@@ -11,15 +11,17 @@ export default class GameState extends Phaser.State {
   paddle: PaddleSprite;
   bricks: Phaser.Group;
 
+  fx: Phaser.Sound;
+
   prevPointerPos: Array<number> = [];
 
   debugMode: boolean = false;
 
   preload() {
     console.log('GameState repload');
-    this.load.image('ball', 'assets/images/ball.png');
-    this.load.image('paddle', 'assets/images/paddle.png');
-    this.load.image('brick', 'assets/images/brick.png');
+    // this.load.image('ball', 'assets/images/ball.png');
+    // this.load.image('paddle', 'assets/images/paddle.png');
+    // this.load.image('brick', 'assets/images/brick.png');
   }
 
   create() {
@@ -28,6 +30,9 @@ export default class GameState extends Phaser.State {
     this.physics.startSystem(Phaser.Physics.ARCADE);
 
     this.physics.arcade.checkCollision.down = false;
+
+    // Init sounds
+    this.createSounds();
 
     // Create the ball
     this.createBall();
@@ -46,7 +51,7 @@ export default class GameState extends Phaser.State {
   }
 
   update() {
-    this.physics.arcade.collide(this.ball, this.paddle, this.ballAndPaddleCollided);
+    this.physics.arcade.collide(this.ball, this.paddle, this.ballAndPaddleCollided, null, this);
     this.physics.arcade.collide(this.ball, this.bricks, this.killBrick, null, this);
 
     if (this.input.activePointer.isDown) {
@@ -74,6 +79,19 @@ export default class GameState extends Phaser.State {
       this.prevPointerPos = [];
       this.paddle.body.velocity.x = 0;
     }
+  }
+
+  createSounds() {
+    this.fx = this.game.add.audio('sfx');
+    this.fx.allowMultiple = true;
+
+	  this.fx.addMarker('touchPaddle', 9, 0.1);
+    this.fx.addMarker('getScore', 10, 1.0);
+    this.fx.addMarker('touchWall', 9, 0.1);
+	  this.fx.addMarker('gameOver', 12, 2);
+    this.fx.addMarker('win', 17, 1.0);
+
+    console.log('fx', this.fx);
   }
 
   createBall() {
@@ -104,6 +122,13 @@ export default class GameState extends Phaser.State {
 
     // Add outbound event
     this.ball.events.onOutOfBounds.add(this.gameOver, this);
+
+
+    //  By default the Signal is empty, so we create it here:
+    this.ball.body.onWorldBounds = new Phaser.Signal();
+
+    //  And then listen for it
+    this.ball.body.onWorldBounds.add(this.hitWorldBounds, this);
   }
 
   createPaddle() {
@@ -158,21 +183,29 @@ export default class GameState extends Phaser.State {
   ballAndPaddleCollided(ball, paddle) {
     // ball.body.drag = new Phaser.Point(1000, 0);
     // TODO friction
+    this.fx.play('touchPaddle');
+  }
+
+  hitWorldBounds(sprite: Phaser.Sprite) {
+    this.fx.play('touchWall');
   }
 
   killBrick(ball, brick) {
     brick.kill();
 
     this.checkWin();
+    this.fx.play('getScore');
   }
 
   gameOver() {
     this.game.state.start('Over');
+    this.fx.play('gameOver');
   }
 
   checkWin() {
     const livingCount = this.bricks.countLiving();
     if (livingCount <= this.bricks.children.length - 3) {
+      this.fx.play('win');
       this.game.state.start("Win");
     }
   }
