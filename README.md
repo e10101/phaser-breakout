@@ -1,4 +1,28 @@
-# Breakout Cerebralfix
+# Breakout game
+
+## Set and Run
+### Clone
+clone the project
+
+### Install node dependencies
+
+```
+npm install
+```
+OR
+```
+yarn install
+```
+
+### Build
+```
+npm run build
+```
+
+### Run
+```
+npm start
+```
 
 ## TODO
  - [x] Add friction to paddle
